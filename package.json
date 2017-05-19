@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node ./server/server.js",
     "knex":"knex",
+    "heroku-postbuild": "knex --knexfile './server/knexfile.js' migrate:rollback; knex --knexfile './server/knexfile.js' migrate:latest; knex --knexfile './server/knexfile.js' seed:run;",
+    "nodemon": "node ./server/server.js",
     "test": "mocha"
   },
   "keywords": [],
