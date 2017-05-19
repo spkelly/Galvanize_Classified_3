@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./server/server.js",
-    "knex":"knex --knexfile './server/knexfile'",
-    "heroku-postbuild": "knex --knexfile './server/knexfile' migrate:rollback; knex --knexfile './server/knexfile' migrate:latest; knex --knexfile './server/knexfile' seed:run;",
+    "knex":"knex",
+    "heroku-postbuild": "knex --knexfile './server/knexfile.js' migrate:rollback; knex --knexfile './server/knexfile.js' migrate:latest; knex --knexfile './server/knexfile.js' seed:run;",
     "nodemon": "node ./server/server.js",
     "test": "mocha"
   },
