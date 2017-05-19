@@ -1,16 +1,47 @@
-<h1>Classifieds</h1>
-<a href="/classifieds/new">new ad</a>
-<input type="text" ng-model="$ctrl.filterText.title" placeholder="filter">
-<select ng-model="orderInput">
+
+<div class="row">
+  <input  class="col-xs-12 col-md-6 col-md-offset-3 "id="filter-bar" class="center-block"type="text" ng-model="$ctrl.filterText.title" placeholder="filter">
+</div>
+
+<select id='order-selector' ng-model="orderInput" ng-init="orderInput='title'">
   <option value="title" selected>Sort By Title</option>
   <option value="price">Sort By Price: lowest to highest</option>
   <option value="-price">Sort By Price: highest to lowest </option>
 </select>
-<div class="ad_container" ng-repeat="ad in $ctrl.ads | orderBy:orderInput | filter:$ctrl.filterText:strict  track by $index ">
-  <img ng-src="{{ad.item_image}}" alt="">
-  <h1 class="add-title">{{ad.title}}</h1>
-  <h2 class="add-descripion">{{ad.description}}</h2>
-  <h2>Price: ${{ad.price.toFixed(2)}}</h2>
-  <a ng-href="/classifieds/{{ad.id}}/edit">edit this ad</a>
-  <a href="#" ng-click="$ctrl.delete(ad.id)">delete this ad</a>
+<div class="row">
+  <div class="col-lg-6 col-xs-12" ng-repeat="ad in $ctrl.ads | orderBy:orderInput | filter:$ctrl.filterText:strict  track by $index ">
+    <div class="panel panel-info" >
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-md-9 col-sm-12 col-md-offset-0 ">
+            <h4 class="ad-title">{{ad.title}}</h4>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <a ng-href="/classifieds/{{ad.id}}/edit">
+              <span class="glyphicon glyphicon-edit"></span>
+            </a>
+            <a href="#" ng-click="$ctrl.delete(ad.id)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel-body">
+          <div class=" ad_container">
+            <div class="row">
+              <div class="col-xs-4">
+                <img class="img-responsive img-thumbnail" ng-src="{{ad.item_image}}" alt="">
+              </div>
+              <div class="col-xs-8">
+                <h4 class="ad-descripion">{{ad.description}}</h4>
+              </div>
+            </div>
+            <hr>
+            <h4 class="ad-price">${{ad.price.toFixed(2)}}</h4>
+          </div>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="row"><a class="center-block" href=/classifieds/new><button id="new-ad-button">new ad</button></a></div>

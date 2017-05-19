@@ -1,0 +1,62 @@
+#site-title{
+  margin:20px auto;
+  text-decoration: none;
+
+}
+
+#site-title a{
+  text-decoration: none;
+  color: black
+}
+
+.img-responsive{
+  display: block;
+  margin:0 auto !important;
+}
+
+#filter-bar{
+  display: block;
+  border-radius: 5px;
+  border: lightgrey solid 1px;
+  height: 50px;
+  font-size: 24px;
+}
+
+.row {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+#order-selector{
+  display: block;
+  margin:10px auto;
+  height: 40px;
+  font-size: 16x;
+  background-color: white;
+  border: none;
+  border-radius: 0px;
+  border: 1px black solid
+}
+.glyphicon{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-left: 24px;
+}
+
+.glyphicon-trash{
+  color: red;
+}
+#new-ad-button{
+  background-color: white;
+  color: black;
+  border: solid black 1px;
+  border-radius: 10px;
+  font-size: 24px;
+  height: 60px;
+  width: 150px;
+}
+
+.ad-price{
+  float:right;
+}
